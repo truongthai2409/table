@@ -1,0 +1,98 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin flexbox(
+  $align: flex-start,
+  $justify: flex-start,
+  $flex-direction: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+}
+@mixin maxWidth($value) {
+  @media screen and (max-width: $value) {
+    @content;
+  }
+}
+$colorGreen: rgb(78, 192, 122);
+$primary: #fc556f;
+$secodary: orange;
+$gradient: linear-gradient(to right, $primary, $secodary);
+ul,
+li {
+  list-style: none;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  font-weight: normal;
+  //   background-color: rgba(182, 210, 221, 0.822);
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea,
+button {
+  font-size: 1.6rem;
+  font-weight: normal;
+  outline: none;
+}
+table {
+  // min-width: 1200px;
+  width: 100%;
+  // left: 0;
+  // right: 0;
+  th {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  td,
+  th {
+    color: #6e4949;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 2rem;
+  }
+  thead tr {
+    border-bottom: 2px solid #ad1a1a;
+  }
+  .desc {
+    white-space: nowrap;
+    max-width: 15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .status {
+    display: inline-block;
+    padding: 1rem 3rem;
+    text-align: center;
+    font-style: 1.2rem;
+    font-weight: bold;
+    border-radius: 3rem;
+    &--active {
+      color: green;
+      background-color: rgba(green, 0.3);
+    }
+  }
+  .action{
+    &-icon{
+        cursor: pointer;
+    }
+  }
+}
